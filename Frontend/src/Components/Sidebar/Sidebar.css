@@ -1,0 +1,63 @@
+.toggle {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  width: 50px;
+  height: 50px;
+  background: #001427 url(../../img/menu.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1000;
+}
+.toggle.active {
+  background: #001427 url(../../img/close.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.toggle:hover {
+  background-color: #00bcd4;
+  transition: 0.2s;
+}
+.sidebar {
+  position: absolute;
+  background: #001427;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  padding: 100px;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  left: 40%;
+  width: 60%;
+  height: 100%;
+}
+.sidebar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.sidebar ul li {
+  list-style: none;
+}
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 32px;
+  margin: 10px 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+.sidebar ul li a:hover {
+  cursor: pointer;
+  color: #00bcd4;
+}
