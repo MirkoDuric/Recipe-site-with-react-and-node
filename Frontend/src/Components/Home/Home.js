@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <div className="homepage-bkg">
         <div className="title-layer"></div>
-        <h3>Welcome to Recipes Inc</h3>
+        <p>Welcome to Recipes Inc</p>
       </div>
       <MenuButton
         activeTggle={(e) => {

@@ -4,7 +4,7 @@
   right: 1%;
   width: 50px;
   height: 50px;
-  background: #001427 url(../../img/menu.png);
+  background: rgb(253, 224, 9) url(../../img/menu.png);
   background-size: 30px;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,19 +12,19 @@
   z-index: 1000;
 }
 .toggle.active {
-  background: #001427 url(../../img/close.png);
+  background: #000 url(../../img/close.png);
   background-size: 25px;
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
 }
 .toggle:hover {
-  background-color: #00bcd4;
+  background-color: #000;
   transition: 0.2s;
 }
 .sidebar {
   position: absolute;
-  background: #001427;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,5 +59,5 @@
 }
 .sidebar ul li a:hover {
   cursor: pointer;
-  color: #00bcd4;
+  color: rgb(253, 224, 9);
 }

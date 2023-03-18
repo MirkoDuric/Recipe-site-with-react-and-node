@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 export default function MenuSidebar() {
-  const activeLinkStyle = {};
+  const activeLinkStyle = {
+    color: "rgb(253, 224, 9)",
+    borderBottom: "1px solid rgb(253, 224, 9)",
+  };
   return (
     <div class="sidebar">
       <ul class="menu">
         <li>
           <NavLink
-            to="/"
+            to="/Recipes Inc"
             style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
           >
             HOME
