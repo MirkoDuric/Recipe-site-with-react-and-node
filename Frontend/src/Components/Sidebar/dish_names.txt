@@ -1,0 +1,27 @@
+const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/dish_names")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+
+data.length ? (
+    data.map((dish) => {
+        return (
+        <li>
+         <NavLink
+              to={dish.name}
+              style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+            >
+             {dish.name}
+            </NavLink>
+        </li>
+        );
+    })
+    ) : (
+        <p>error</p>
+    );
+}

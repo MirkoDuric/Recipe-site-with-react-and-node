@@ -1,16 +1,18 @@
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import { useState, useEffect } from "react";
 export default function MenuSidebar() {
   const activeLinkStyle = {
     color: "rgb(253, 224, 9)",
     borderBottom: "1px solid rgb(253, 224, 9)",
   };
+
   return (
-    <div class="sidebar">
-      <ul class="menu">
+    <div className="sidebar">
+      <ul className="menu">
         <li>
           <NavLink
-            to="/Recipes Inc"
+            to="/"
             style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
           >
             HOME
@@ -18,34 +20,34 @@ export default function MenuSidebar() {
         </li>
         <li>
           <NavLink
-            to="/"
+            to="/AllRecipes"
             style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
           >
-            MY STORY
+            ALL RECIPES
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/"
+            to="/PeruvianDishes"
             style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
           >
-            SKILLS
+            PERUVIAN DISHES
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/"
+            to="/ZAFDishes"
             style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
           >
-            PROJECTS
+            SOUTH AFRICAN DISHES
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/"
+            to="/SerbianDishes"
             style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
           >
-            CONTACT
+            SERBIAN DISHES
           </NavLink>
         </li>
       </ul>

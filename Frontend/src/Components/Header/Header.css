@@ -1,5 +1,6 @@
 .header {
-  height: 10vh;
+  min-height: 5vh;
+  max-height: 10vh;
   background-color: rgb(253, 224, 9);
   display: flex;
   justify-content: flex-start;
