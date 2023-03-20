@@ -10,18 +10,26 @@ export default function RecipeList({ endpoint }) {
       .then((data) => setDishes(data))
       .catch((err) => console.err(err));
   }, [endpoint]);
+
+  if (!dishes) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className="recipe-list-container">
-      {dishes.map((dish) => {
-        return (
-          <RecipeCard
-            key={dish.id}
-            src={dish.image_url}
-            description={dish.description}
-            path={dish.name}
-          />
-        );
-      })}
+      <div className="recipe-list-layer"></div>
+      <div className="scroll">
+        {dishes.map((dish) => {
+          return (
+            <RecipeCard
+              key={dish.id}
+              src={dish.image_url}
+              description={dish.description}
+              path={`/${dish.id}`}
+              name={dish.name}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

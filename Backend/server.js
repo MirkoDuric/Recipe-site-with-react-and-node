@@ -64,6 +64,27 @@ app.get("/:dishType", (req, res) => {
       });
   }
 });
+app.get("/:dishId/data", (req, res) => {
+  let dishId = req.params.dishId;
+  pool
+    .query("SELECT * FROM dishes WHERE id=$1;", [dishId])
+    .then(({ rows }) => res.json(rows))
+    .catch((err) => console.log(err));
+});
+app.get("/:dishId/ingredients", (req, res) => {
+  let dishId = req.params.dishId;
+  pool
+    .query("SELECT * FROM ingredients WHERE dish_id=$1;", [dishId])
+    .then(({ rows }) => res.json(rows))
+    .catch((err) => console.log(err));
+});
+app.get("/:dishId/preparation", (req, res) => {
+  let dishId = req.params.dishId;
+  pool
+    .query("SELECT * FROM preparation_steps WHERE dish_id=$1;", [dishId])
+    .then(({ rows }) => res.json(rows))
+    .catch((err) => console.log(err));
+});
 
 app.listen(PORT, () => {
   console.log(`Port listens on port ${PORT}`);

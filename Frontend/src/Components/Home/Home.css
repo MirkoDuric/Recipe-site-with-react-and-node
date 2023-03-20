@@ -19,7 +19,7 @@
   z-index: 3;
 }
 
-p {
+.homepage-bkg p {
   position: relative;
   height: fit-content;
   width: 40%;
