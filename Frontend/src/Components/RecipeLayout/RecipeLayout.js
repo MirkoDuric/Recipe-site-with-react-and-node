@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./RecipeLayout.css";
 export default function RecipeLayout({ endpoint }) {
   const [dish, setDish] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -33,28 +33,28 @@ export default function RecipeLayout({ endpoint }) {
   return (
     <div className="recipe-layout-container">
       <div className="recipe-layout-layer"></div>
-      <section className="recipe-layout">
-        {dish.length ? (
-          dish.map((recipe) => {
-            return (
-              <article className="recipe-img-and-description">
-                <div
-                  className="resipe-img"
-                  style={{ backgroundImage: `url(${recipe.image_url})` }}
-                ></div>
-                <div className="recipe-description">
-                  <p className="recipe-name">{recipe.name}</p>
-                  <p className="description">{recipe.description}</p>
+      <header className="recipe-layout">
+        <section className="recipe-img-and-description">
+          {dish.length ? (
+            dish.map((dish) => {
+              return (
+                <div className="img-desc">
+                  <div
+                    className="recipe-img"
+                    style={{ backgroundImage: `url(${dish.image_url})` }}
+                  ></div>
+                  <div className="recipe-description">
+                    <p className="recipe-name">{dish.name}</p>
+                    <p className="description">{dish.description}</p>
+                  </div>
                 </div>
-              </article>
-            );
-          })
-        ) : (
-          <p>Error</p>
-        )}
-        <article className="ingredients-and-preparation">
-          <div className="ingredients">
-            <p>Ingredients</p>
+              );
+            })
+          ) : (
+            <p>Error</p>
+          )}
+          <article className="ingredients">
+            <p className="ingredients-title">INGREDIENTS:</p>
             <ol>
               {ingredients.length ? (
                 ingredients.map((ingredient) => {
@@ -64,21 +64,68 @@ export default function RecipeLayout({ endpoint }) {
                 <p>Error 500. Internal Server Issue</p>
               )}
             </ol>
-          </div>
-          <div className="preparation">
-            <p>Preparation method</p>
-            <ol>
-              {preparation.length ? (
-                preparation.map((step) => {
-                  return <li>{step.description}</li>;
-                })
-              ) : (
-                <p>Error 500. Internal Server Issue</p>
-              )}
-            </ol>
-          </div>
-        </article>
-      </section>
+          </article>
+        </section>
+        <section className="preparation">
+          <p className="preparation-title">PREPARATION METHOD:</p>
+          <ol>
+            {preparation.length ? (
+              preparation.map((step) => {
+                return <li>{step.description}</li>;
+              })
+            ) : (
+              <p>Error 500. Internal Server Issue</p>
+            )}
+          </ol>
+        </section>
+      </header>
     </div>
+    // <div className="recipe-layout-container">
+    //   <div className="recipe-layout-layer"></div>
+    //   <section className="recipe-layout">
+    //     {dish.length ? (
+    //       dish.map((dish) => {
+    //         return (
+    //           <article className="recipe-img-and-description">
+    //             <div
+    //               className="recipe-img"
+    //               style={{ backgroundImage: `url(${dish.image_url})` }}
+    //             ></div>
+    //             <div className="recipe-description">
+    //               <p className="recipe-name">{dish.name}</p>
+    //               <p className="description">{dish.description}</p>
+    //             </div>
+    //           </article>
+    //         );
+    //       })
+    //     ) : (
+    //       <p>Error</p>
+    //     )}
+    //     <article className="ingredients">
+    //       <p className="ingredients-title">Ingredients</p>
+    //       <ol>
+    //         {ingredients.length ? (
+    //           ingredients.map((ingredient) => {
+    //             return <li>{ingredient.name}</li>;
+    //           })
+    //         ) : (
+    //           <p>Error 500. Internal Server Issue</p>
+    //         )}
+    //       </ol>
+    //     </article>
+    //     <article className="preparation">
+    //       <p className="preparation-title">Preparation method</p>
+    //       <ol>
+    //         {preparation.length ? (
+    //           preparation.map((step) => {
+    //             return <li>{step.description}</li>;
+    //           })
+    //         ) : (
+    //           <p>Error 500. Internal Server Issue</p>
+    //         )}
+    //       </ol>
+    //     </article>
+    //   </section>
+    // </div>
   );
 }

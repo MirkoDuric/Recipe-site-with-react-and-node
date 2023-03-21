@@ -44,10 +44,11 @@
   background-color: #f4f4f4;
   z-index: 4;
   padding: 10px 0;
+  outline: 1px solid rgba(0, 0, 0, 0.5);
 }
 .recipe-card h4 {
   height: fit-content;
-  color: black;
+  color: rgba(0, 0, 0, 0.5);
 }
 .recipe-card .card-img {
   height: 70vh;
@@ -64,9 +65,8 @@
   padding: 15px;
 }
 .recipe-card .description-section h5 {
-  margin: 0;
-  padding: 0;
   height: fit-content;
+  color: rgba(0, 0, 0, 0.5);
 }
 .recipe-card .description-section p {
   color: black;

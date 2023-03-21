@@ -1,0 +1,128 @@
+.recipe-layout-container {
+  position: relative;
+  height: 90vh;
+  background: url(../../img/traditional-food-around-the-world-Travlinmad.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+}
+.recipe-layout-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.4;
+  z-index: 2;
+  overflow-y: scroll;
+}
+.recipe-layout {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  gap: 20px;
+  height: 85vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  outline: #000 1px solid;
+  justify-content: center;
+}
+.recipe-img-and-description {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.recipe-img-and-description:nth-child(even) {
+}
+.img-desc {
+  display: flex;
+  gap: 5px;
+  height: 25%;
+}
+.recipe-img-and-description .recipe-img {
+  height: 100%;
+  width: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  outline: #000 1px solid;
+}
+.recipe-img-and-description .recipe-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+  height: 100%;
+  width: 50%;
+}
+.recipe-img-and-description .recipe-description .recipe-name {
+  font-size: 24px;
+  height: fit-content;
+  width: fit-content;
+}
+.recipe-img-and-description .recipe-description .description {
+  align-self: center;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+}
+.ingredients {
+  height: 72.5%;
+  outline: 1px rgba(0, 0, 0, 0.4) solid;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.ingredients .ingredients-title {
+  align-self: center;
+  height: fit-content;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+.ingredients ol {
+  height: fit-content;
+  font-size: 14px;
+  overflow-y: scroll;
+  padding: 15px;
+}
+.ingredients li {
+  height: fit-content;
+}
+.preparation {
+  height: 100%;
+  width: fit-content;
+  outline: 1px rgba(0, 0, 0, 0.4) solid;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 55%;
+}
+.preparation .preparation-title {
+  align-self: center;
+  height: fit-content;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+.preparation ol {
+  font-size: 14px;
+  height: fit-content;
+  overflow-y: scroll;
+  padding: 25px;
+}
+.preparation li {
+  height: fit-content;
+}
