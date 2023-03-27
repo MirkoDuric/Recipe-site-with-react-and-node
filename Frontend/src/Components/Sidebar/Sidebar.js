@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
-import { useState, useEffect } from "react";
 export default function MenuSidebar() {
   const activeLinkStyle = {
     color: "rgb(253, 224, 9)",

@@ -9,7 +9,7 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route index path="/" element={<Home />} />
+        <Route index path="" element={<Home />} />
         <Route
           exact
           path="/AllRecipes"

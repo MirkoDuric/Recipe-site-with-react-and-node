@@ -24,39 +24,41 @@
   position: relative;
   z-index: 3;
   display: flex;
-  gap: 20px;
+  justify-content: center;
   height: 85vh;
   top: 0;
   left: 0;
   width: 100%;
   background: #fff;
-  padding: 15px;
+  padding: 10px;
   outline: #000 1px solid;
-  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  gap: 2%;
 }
-.recipe-img-and-description {
-  height: 100%;
-  width: 40%;
+
+.img-and-description {
+  height: fit-content;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.recipe-img-and-description:nth-child(even) {
+  justify-content: center;
+  align-items: center;
 }
 .img-desc {
   display: flex;
-  gap: 5px;
-  height: 25%;
-}
-.recipe-img-and-description .recipe-img {
   height: 100%;
+  width: 100%;
+  gap: 3%;
+}
+.img-and-description .recipe-img {
+  max-height: 30vh;
   width: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   outline: #000 1px solid;
 }
-.recipe-img-and-description .recipe-description {
+.img-and-description .recipe-description {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,19 +67,20 @@
   height: 100%;
   width: 50%;
 }
-.recipe-img-and-description .recipe-description .recipe-name {
+.img-and-description .recipe-description .recipe-name {
   font-size: 24px;
   height: fit-content;
   width: fit-content;
 }
-.recipe-img-and-description .recipe-description .description {
+.img-and-description .recipe-description .description {
   align-self: center;
   font-size: 16px;
   height: 100%;
   width: 100%;
 }
 .ingredients {
-  height: 72.5%;
+  height: fit-content;
+  width: 100%;
   outline: 1px rgba(0, 0, 0, 0.4) solid;
   padding: 15px;
   display: flex;
@@ -94,20 +97,19 @@
 .ingredients ol {
   height: fit-content;
   font-size: 14px;
-  overflow-y: scroll;
   padding: 15px;
 }
 .ingredients li {
   height: fit-content;
 }
 .preparation {
-  height: 100%;
+  height: fit-content;
   width: fit-content;
   outline: 1px rgba(0, 0, 0, 0.4) solid;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  max-width: 55%;
+  max-width: 100%;
 }
 .preparation .preparation-title {
   align-self: center;
@@ -120,9 +122,41 @@
 .preparation ol {
   font-size: 14px;
   height: fit-content;
-  overflow-y: scroll;
   padding: 25px;
 }
 .preparation li {
   height: fit-content;
+}
+@media (min-width: 1024px) {
+  .recipe-layout {
+    gap: 3%;
+  }
+  .img-and-description {
+    width: 32%;
+  }
+  .img-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    height: 65vh;
+  }
+  .img-and-description .recipe-img {
+    width: 100%;
+    height: 100%;
+  }
+  .img-and-description .recipe-description {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .img-and-description .recipe-description .recipe-name {
+    color: #000;
+    font-size: 35px;
+  }
+  .img-and-description .recipe-description .description {
+    font-size: 20px;
+  }
+  .ingredients {
+    width: 65%;
+  }
 }

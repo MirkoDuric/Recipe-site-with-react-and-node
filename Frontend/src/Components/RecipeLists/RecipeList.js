@@ -5,7 +5,7 @@ export default function RecipeList({ endpoint }) {
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/${endpoint}`)
+    fetch(`http://localhost:8001/${endpoint}`)
       .then((res) => res.json())
       .then((data) => setDishes(data))
       .catch((err) => console.err(err));
