@@ -1,6 +1,7 @@
 .recipe-list-container {
   position: relative;
-  height: 90vh;
+  top: 10vh;
+  height: 100vh;
   background: url(../../img/traditional-food-around-the-world-Travlinmad.jpeg);
   background-position: center;
   background-repeat: no-repeat;
@@ -16,22 +17,21 @@
   background: #000;
   opacity: 0.4;
   z-index: 2;
-  overflow-y: scroll;
 }
 .scroll {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 25px;
-  overflow-y: scroll;
   padding: 50px;
   z-index: 3;
+  overflow-y: scroll;
 }
 .recipe-card {
   position: relative;
@@ -51,7 +51,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 .recipe-card .card-img {
-  height: 70vh;
+  min-height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,4 +85,9 @@
 .recipe-card a:hover {
   background-color: rgb(1, 1, 0);
   transition: 0.3s;
+}
+@media (max-height: 600px) {
+  .recipe-card {
+    min-height: 400px;
+  }
 }

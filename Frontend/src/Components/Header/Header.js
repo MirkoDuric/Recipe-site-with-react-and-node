@@ -12,6 +12,7 @@ export default function Header() {
     >
       <h4>Recipes Inc</h4>
       <MenuButton
+        className="menuButton"
         activeTggle={(e) => {
           return setActive(!active), e.target.classList.toggle("active");
         }}

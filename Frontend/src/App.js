@@ -6,7 +6,7 @@ import RecipeLayout from "./Components/RecipeLayout/RecipeLayout";
 import RecipeList from "./Components/RecipeLists/RecipeList";
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <Header />
       <Routes>
         <Route index path="" element={<Home />} />
