@@ -29,7 +29,7 @@ export default function RecipeLayout({ endpoint }) {
   }, [endpoint]);
 
   if (!dish || !ingredients || !preparation) {
-    return <LoadingSpinner />;
+    return <p>Loading...</p>;
   }
   return (
     <div className="recipe-layout-container">
@@ -52,7 +52,7 @@ export default function RecipeLayout({ endpoint }) {
               );
             })
           ) : (
-            <LoadingSpinner />
+            <h3 className="loading">Loading...</h3>
           )}
         </section>
         <section className="ingredients">

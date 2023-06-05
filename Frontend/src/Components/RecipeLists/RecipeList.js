@@ -1,25 +1,33 @@
 import "./Recipes.css";
 import RecipeCard from "./RecipeCard";
 import { useState, useEffect } from "react";
+
 export default function RecipeList({ endpoint }) {
   const [dishes, setDishes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:8001/${endpoint}`)
       .then((res) => res.json())
-      .then((data) => setDishes(data))
-      .catch((err) => console.err(err));
+      .then((data) => {
+        setDishes(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
   }, [endpoint]);
 
-  if (!dishes) {
-    return <p>Loading...</p>;
-  }
   return (
     <div className="recipe-list-container">
       <div className="recipe-list-layer"></div>
       <div className="scroll">
-        {dishes.map((dish) => {
-          return (
+        {loading ? (
+          <h2 className="loading">Loading...</h2>
+        ) : (
+          dishes.map((dish) => (
             <RecipeCard
               key={dish.id}
               src={dish.image_url}
@@ -27,8 +35,8 @@ export default function RecipeList({ endpoint }) {
               path={`/${dish.id}`}
               name={dish.name}
             />
-          );
-        })}
+          ))
+        )}
       </div>
     </div>
   );
