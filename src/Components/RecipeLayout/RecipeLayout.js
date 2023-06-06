@@ -8,21 +8,21 @@ export default function RecipeLayout({ endpoint }) {
 
   useEffect(() => {
     console.log(endpoint);
-    fetch(`http://localhost:8001/${endpoint}/data`)
+    fetch(`https://recipeinc-backend.onrender.com/${endpoint}/data`)
       .then((res) => res.json())
       .then((data) => setDish(data))
       .catch((err) => console.err(err));
   }, [endpoint]);
 
   useEffect(() => {
-    fetch(`http://localhost:8001/${endpoint}/ingredients`)
+    fetch(`https://recipeinc-backend.onrender.com/${endpoint}/ingredients`)
       .then((res) => res.json())
       .then((data) => setIngredients(data))
       .catch((err) => console.err(err));
   }, [endpoint]);
 
   useEffect(() => {
-    fetch(`http://localhost:8001/${endpoint}/preparation`)
+    fetch(`https://recipeinc-backend.onrender.com/${endpoint}/preparation`)
       .then((res) => res.json())
       .then((data) => setPreparation(data))
       .catch((err) => console.err(err));

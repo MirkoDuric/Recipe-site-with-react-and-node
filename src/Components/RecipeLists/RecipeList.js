@@ -8,7 +8,7 @@ export default function RecipeList({ endpoint }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8001/${endpoint}`)
+    fetch(`https://recipeinc-backend.onrender.com/${endpoint}`)
       .then((res) => res.json())
       .then((data) => {
         setDishes(data);
