@@ -1,4 +1,4 @@
 import "./Sidebar.css";
 export default function MenuButton(props) {
-  return <div className="toggle" onClick={props.activeTggle}></div>;
+  return <div className={props.className} onClick={props.activeTggle}></div>;
 }

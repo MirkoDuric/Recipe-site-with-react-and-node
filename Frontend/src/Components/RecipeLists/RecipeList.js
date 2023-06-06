@@ -17,6 +17,7 @@ export default function RecipeList({ endpoint }) {
       .catch((err) => {
         setError(err);
         setLoading(false);
+        setError(true);
       });
   }, [endpoint]);
 
@@ -26,6 +27,8 @@ export default function RecipeList({ endpoint }) {
       <div className="scroll">
         {loading ? (
           <h2 className="loading">Loading...</h2>
+        ) : error ? (
+          <h3 className="error">Error!</h3>
         ) : (
           dishes.map((dish) => (
             <RecipeCard
