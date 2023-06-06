@@ -63,7 +63,7 @@ export default function RecipeLayout({ endpoint }) {
                 return <li>{ingredient.name}</li>;
               })
             ) : (
-              <p>Error 500. Internal Server Issue</p>
+              <h3 className="loading">Loading...</h3>
             )}
           </ol>
         </section>
@@ -75,7 +75,7 @@ export default function RecipeLayout({ endpoint }) {
                 return <li>{step.description}</li>;
               })
             ) : (
-              <p>Error 500. Internal Server Issue</p>
+              <h3 className="loading">Loading...</h3>
             )}
           </ol>
         </section>
