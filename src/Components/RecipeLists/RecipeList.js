@@ -6,6 +6,19 @@ export default function RecipeList({ endpoint }) {
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [timestamp, setTimestamp] = useState(Date.now());
+
+  useEffect(() => {
+    const handleRefresh = () => {
+      setTimestamp(Date.now());
+    };
+
+    window.addEventListener("load", handleRefresh);
+
+    return () => {
+      window.removeEventListener("load", handleRefresh);
+    };
+  }, []);
 
   useEffect(() => {
     fetch(`https://recipeinc-backend.onrender.com/${endpoint}`)
@@ -19,7 +32,7 @@ export default function RecipeList({ endpoint }) {
         setLoading(false);
         setError(true);
       });
-  }, [endpoint]);
+  }, [endpoint, timestamp]);
 
   return (
     <div className="recipe-list-container">
